@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Divider, List, Typography, Button } from 'antd';
 
 const ItemList = () => {
   const [items, setItems] = useState([]);
@@ -27,22 +28,22 @@ const ItemList = () => {
   };
 
   return (
-    <div>
+    <div className="App">
       <form onSubmit={addItem}>
         <input type="text" name="item" />
-        <button type="submit">Adicionar</button>
+        <Button>Adicionar</Button>
       </form>
       <ul>
         {items.map((item) => (
-          <li key={item.id}>
+          <List key={item.id}>
             <input
               type="checkbox"
               checked={item.checked}
               onChange={() => toggleItem(item.id)}
             />
             <label className={item.checked ? "checked" : ""}>{item.text}</label>
-            <button onClick={() => removeItem(item.id)}>Remover</button>
-          </li>
+            <Button type="primary" onClick={() => removeItem(item.id)}>Remover</Button>
+          </List>
         ))}
       </ul>
     </div>

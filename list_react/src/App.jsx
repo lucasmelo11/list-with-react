@@ -1,8 +1,8 @@
-import React from 'react';
-import ItemList from './ItemList'
+import React from "react";
+import ItemList from "./ItemList";
+import 'antd/dist/reset.css'
 
 function App() {
-
   return (
     <div>
       <h1>Lista de Itens</h1>
@@ -11,4 +11,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
